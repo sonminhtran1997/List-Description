@@ -1,0 +1,102 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Exercise 3</title>
+    <title></title>
+    <link rel="stylesheet" href="styles/kendo.common.min.css" />
+    <link rel="stylesheet" href="styles/kendo.default.min.css" />
+    <link rel="stylesheet" href="styles/kendo.default.mobile.min.css" />
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.8.2.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.11/jquery-ui.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <style>
+        .fieldlist {
+            margin: 0 0 -2em;
+            padding: 0;
+        }
+
+            .fieldlist li {
+                list-style: none;
+                padding-bottom: 2em;
+            }
+
+            .fieldlist label {
+                display: block;
+                padding-bottom: 1em;
+                font-weight: bold;
+                text-transform: uppercase;
+                font-size: 12px;
+                color: #444;
+            }
+
+        .delOne {
+            background-image: url(img/delete.png);
+            width: 18px;
+            height: 30px;
+            border: 0;
+            background-size: 100%;
+            background-size: 30px auto;
+        }
+    </style>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/kendo.all.min.js"></script>
+    <script src="scripts/myScript.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#table").kendoGrid({
+                height: 550,
+                sortable: true
+            });
+        });
+    </script>
+
+</head>
+<body ng-app="">
+    <div id="content" style="width: 100%;overflow:auto;">
+        <div id="view" style="float:left; width: 50%">
+            <table id="table">
+                <thead>
+                <th>Order Number</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>ID</th>
+                <th>Description</th>
+                <th></th>
+                </thead>
+                <tbody></tbody>
+            </table>
+            <br>
+            <input style="float:right" type="button" name="create" value="Create New" onclick="reset()">
+        </div>
+        <form name="myForm" class="k-header" style="float:right; width: 48%">
+
+            <ul class="fieldlist">
+                <li>
+                    <label for="simple-input">First Name</label>
+                    <input id="fname" type="text" class="k-textbox" style="width: 100%;"/>
+                </li>
+                <li>
+                    <label for="simple-input">Last Name</label>
+                    <input id="lname" type="text" class="k-textbox" style="width: 100%;" />
+                </li>
+                <li>
+                    <label for="simple-input">ID</label>
+                    <input id="ID" type="text" class="k-textbox" style="width: 100%;" />
+                </li>
+                <li>
+                    <label for="simple-textarea">Description</label>
+                    <textarea id="description" class="k-textbox" style="width: 100%;"></textarea>
+                </li>
+            </ul>
+            <br>
+            <input style="float:left" type="button" name="save" value="Save" onclick='validate()'>
+
+        </form>
+        
+
+</div>
+
+
+
+</body>
+</html>
